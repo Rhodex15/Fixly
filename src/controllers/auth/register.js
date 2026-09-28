@@ -9,8 +9,8 @@ export const register = async (req, res) => {
         if (existingUser) {
             return res.status(409).json({
                 statusCode: 409,
-                success: "false",
-                message: "User with this email alrady exist!",
+                success: false,
+                message: "User with this email alrady exists!",
             });
         }
 
@@ -23,7 +23,7 @@ export const register = async (req, res) => {
             role,
         });
 
-        //step4: generate and
+        //step4: generate and send response
         if (user) {
             return res.status(201).json({
                 statusCode: 201,
@@ -39,7 +39,7 @@ export const register = async (req, res) => {
             });
         }
     } catch (error) {
-        console.error(`Registration error: ${error}`);
+        console.error(`Registration error: ${error.message}`);
         return res.status(500).json({
             statusCode: 500,
             success: false,

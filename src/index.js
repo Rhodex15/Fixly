@@ -4,9 +4,9 @@ import morgan from "morgan";
 import { connectDB } from "../src/config/dbConnection.js";
 import authRoutes from "./routes/auth.js";
 
-dotenv.config();;
+dotenv.config();
 const app = express();
-app.use(express.json())
+app.use(express.json());
 app.use(morgan('dev'));
 
 app.get("/", (req, res) => {

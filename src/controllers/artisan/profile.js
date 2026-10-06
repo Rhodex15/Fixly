@@ -90,6 +90,12 @@ export const createProfile = async (req, res) => {
         office_address: newProfile.office_address,
         createdAt: newProfile.createdAt,
         updatedAt: newProfile.updatedAt,
+        personal_profile: {
+          firstname: user.firstName,
+          lastname: user.lastName,
+          email: user.email,
+          role: user.role,
+        },
       },
     });
   } catch (error) {

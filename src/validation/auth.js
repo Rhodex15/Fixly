@@ -25,3 +25,29 @@ const registerValidationSchema = Joi.object({
 });
 
 export { registerValidationSchema };
+
+const profileValidationSchema = Joi.object({
+  professional_headline: Joi.string().required().messages({
+    "string.base": "Professional Headline must be a text",
+    "string.empty": "Professional Headline cannot be empty",
+    "any.required": "professional Headline is required",
+  }),
+  profession: Joi.string()
+    .required()
+    .valid(
+      "Carpenter",
+      "Plumber",
+      "Welder",
+      "Brick Layer",
+      "Electrician",
+      "Auto Mechanic",
+      "Painter",
+      "Others",
+    ).messages({
+      "any.only": "Profession must be one of the following: Carpenter, Plumber, Welder, Brick Layer, Electrician, Auto Mechanic, Painter, Others",
+    }),
+    experience_years: Joi.number().required().messages({
+      "number.base": "Exper"
+    })
+    
+});

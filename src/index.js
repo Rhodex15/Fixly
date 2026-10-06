@@ -6,9 +6,9 @@ import authRoutes from "./routes/auth.js";
 import artisanRoutes from "./routes/artisan.js"
 import adminRoutes from "./routes/admin.js"
 
-dotenv.config();;
+dotenv.config();
 const app = express();
-app.use(express.json())
+app.use(express.json());
 app.use(morgan('dev'));
 
 app.get("/", (req, res) => {
